@@ -410,7 +410,7 @@ destination dp_xconsole { pipe("/dev/xconsole"); };
 destination du_all  { usertty("*"); };
 
 ########################
- MONGO DB  Destinations
+ #MONGO DB  Destinations
 ########################
 
 #${R_YEAR}-${R_MONTH}-${R_DAY} ${R_HOUR}:${R_MIN}:${R_SEC} #message when receiveds
