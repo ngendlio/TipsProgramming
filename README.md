@@ -2,4 +2,10 @@
 
 This is a compilation of some useful tips.
 
-# For me only me
+Generate password
+
+echo -n yourPass |sha256sum
+
+Lionel Ngendakuriyo
+
+
