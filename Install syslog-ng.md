@@ -426,9 +426,11 @@ destination d_mongodb {
         servers("localhost:27017")
         database("syslog")
         collection("messages")
-        // this does not support TLS  see https://goo.gl/t5BMGh
-	// password("aStrongAndLongPassword")
-	//username() 
+
+    #   this does not support TLS  see https://goo.gl/t5BMGh
+    #   password("aStrongAndLongPassword")
+    #   username() 
+     
 	value-pairs(
 		pair("date", "${UNIXTIME}")
 		pair("ip","$SOURCEIP")
