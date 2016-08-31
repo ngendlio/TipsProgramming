@@ -17,9 +17,9 @@ sudo apt-get install syslog-ng-mod-mongodb
 ##Recommended architecture
 We have two types of architectures:
 
-1. Client syslog ------> Server syslog -----> Database MongoDb
+1. Client syslog ------> Server syslog -----> Database MongoDb (Recommended for centralized Log management)
 
-2. Client Syslog ------> Database MongoDB
+2. Client Syslog ------> Database MongoDB (For Unique machine monitoring)
 
 The first is the one that is recommended because Mongo DB may fail from time to time resulting in data loss. 
 As we rely on MongoDB, only for easier search and the actual logs are still stored on hard disk, 
@@ -665,3 +665,14 @@ log {
 
 
 ```
+
+#Starting server 
+```
+sudo service syslog-ng start 
+```
+
+#Reload Server
+```
+sudo service syslog-ng reload 
+```
+#
