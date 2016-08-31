@@ -6,14 +6,3 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-2 && sudo apt-get update &&
 ```
 sudo apt-get install mongodb-server
 ```
-#Install Node js
-```
-sudo apt-get install node npm
-
-# Install & update  node via npm
-sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-#install nodemon and express globally
-sudo npm install nodemon express -g 
-```
