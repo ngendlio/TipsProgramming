@@ -9,7 +9,8 @@ sudo apt-get install mongodb-server
 #Install Node js
 ```
 sudo apt-get install node npm
-# Install nodejs via npm
+
+# Install & update  node via npm
 sudo npm cache clean -f
 sudo npm install -g n
 sudo n stable
