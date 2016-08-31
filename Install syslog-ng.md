@@ -1,7 +1,7 @@
 #Syslog
 
 ##Syslog installation
-First, let 's install some dependecy
+First, let's install some dependecies
 ```
 sudo apt-get install syslog-ng-core
 
@@ -9,6 +9,10 @@ sudo apt-get install syslog-ng-core
 Then,install it syslog-ng:
 ```python 
 sudo apt-get install syslog-ng
+```
+For the server machine add this following in other to support Mongo DB driver
+```
+sudo apt-get install syslog-ng-mod-mongodb
 ```
 ##Recommended architecture
 We have two types of architectures:
