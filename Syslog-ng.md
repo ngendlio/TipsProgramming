@@ -24,7 +24,8 @@ We have two types of architectures:
 The first is the one that is recommended because Mongo DB may fail from time to time resulting in data loss. 
 As we rely on MongoDB, only for easier search and the actual logs are still stored on hard disk, 
 `this is not an issue at all`.
-
+Complete these conf with : 
+`http://www.monitis.com/blog/how-to-filter-logs-with-syslog-ng/`
 ##Syslog client configuration
 ```
 @version: 3.5
