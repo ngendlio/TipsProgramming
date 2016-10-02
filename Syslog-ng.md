@@ -665,7 +665,8 @@ log {
 
 
 ```
-
+#Secure logging using TLS
+Check this link: https://www.balabit.com/documents/syslog-ng-ose-latest-guides/en/syslog-ng-ose-guide-admin/html/concepts-tls.html
 #Starting server 
 ```
 sudo service syslog-ng start 
