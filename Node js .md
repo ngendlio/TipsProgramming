@@ -1,7 +1,7 @@
 # Installation
 
 ```
-sudo apt-get install node npm
+sudo apt-get install npm
 
 # Install & update  node via npm
 
