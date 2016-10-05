@@ -10,7 +10,10 @@ use admin
 ```
 ## Create user  with root privileges
 ```
+#ADMIN
 db.createUser({user:"lio_Mongo", pwd:"admin123", roles:[{role:"root", db:"admin"}]})
+
+#
 ```
 Then save and exit.
 ## Enable mongodb authentication
