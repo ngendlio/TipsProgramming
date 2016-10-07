@@ -432,15 +432,22 @@ destination d_mongodb {
     #   password("aStrongAndLongPassword")
     #   username() 
      
-	value-pairs(
-		pair("date", "${UNIXTIME}")
-		pair("ip","$SOURCEIP")
-		pair("facility", "$FACILITY")
-		pair("level", "$LEVEL")
-		pair("host", "$HOST")
-		pair("program", "$PROGRAM")
-		pair("pid", int64("$PID"))
-		pair("message", "$MSGONLY")
+    value-pairs(
+        pair("year", "${YEAR}")
+        pair("month", "${MONTH}")
+        pair("week", "${WEEK_DAY}")
+        pair("day", "${DAY}")
+        pair("hour", "${HOUR}")
+        pair("min", "${MIN}")
+        pair("sec", "${SEC}")
+        pair("date", "${UNIXTIME}")
+        pair("ip","$SOURCEIP")
+        pair("facility", "$FACILITY")
+        pair("level", "$LEVEL")
+        pair("host", "$HOST")
+        pair("program", "$PROGRAM")
+        pair("pid", int64("$PID"))
+        pair("message", "$MSGONLY")
              )
 
     );
