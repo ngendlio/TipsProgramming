@@ -43,5 +43,23 @@ sudo	shutdown	-h	18:30	"System	is	going	down	for	maintenance	this
 evening	at	6:30	p.m.	Please	make	sure	you	have	saved	your	work	and	logged	out	by
 then	or	you	may	lose	data."
 ```
+## Examples 
+Create a group `+` change the group	ownership `+` Add a user to a group `+` Make a user	X	the	group	administrator	with	the	gpasswd command so that He can add others users.
+```
+# Create a group 
+sudo	groupadd	groupeX
+
+# Change the owner group of the target folder
+sudo	chgrp	groupeX /home/lionel/FolderX
+
+# Add user lionel to the groupeX
+sudo	usermod	-G	groupeX lionel
+
+# Make lionel the administrator of the group groupeX
+sudo	gpasswd	-A	lionel
+```
+
+
+
 
 
