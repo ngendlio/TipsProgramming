@@ -43,9 +43,10 @@ while read name event
            *)
                 MESSAGE=" vient de subir une modification de type $event";;
         esac
-        echo -e "Machine: ${MACHINE}, le `date`,\n $name  ${MESSAGE} " | ssmtp ngendlio@gmail.com
+        echo -e "Subject: Report Alert of ${MACHINE} \n\nDate: `date`, $name  ${MESSAGE} " | ssmtp ngendlio@gmail.com
         echo -e "Machine: ${MACHINE}, le `date`,\n $name ${MESSAGE} " 
   done
+
 ```
 Note: You can specify the `FACILITY` and the `LEVEL` to log. CHeck out the man of `logger` program
 
