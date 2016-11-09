@@ -26,10 +26,10 @@ MONITORDIR="/home/lionel/Documents"
 EVENTS="modify,attrib,close_write,move,create,delete"
 inotifywait -m -r -e $EVENTS --format '%w%f' "${MONITORDIR}" | while read NEWFILE
 do
-        # Send by mail
+  # Send by mail
         echo " ${NEWFILE} has been created"
-        # Log to the journal
-        echo "${NEWFILE} has been created"  ||logger -p kern.crit
+  # Log to the journal
+        echo "${NEWFILE} has been created"  | logger -p kern.crit
 done
 ```
 Note: You can specify the `FACILITY` and the `LEVEL` to log. CHeck out the man of `logger` program
