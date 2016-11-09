@@ -28,7 +28,7 @@ do
 inotifywait -r -e modify,attrib,close_write,move,create,delete /home/lionel/Documents
 done
 ```
-## Watch and log all activities 
+## Watch and log 
 
 Just add  the logger program after an event, then the event will go directly to the syslog program,
 
@@ -39,7 +39,20 @@ inotifywait -r -e modify,attrib,close_write,move,create,delete /home/lionel/Docu
 done
 ```
 Note: You can specify the `FACILITY` and the `LEVEL` to log. CHeck out the man of `logger` program
+## Watch and log SOME activities
+```
+#!/bin/sh
 
+# CONFIGURATION
+DIR="/tmp"
+EVENTS="create"
+ 
+# MAIN
+inotifywait -m -e $EVENTS --timefmt '%Y-%m-%d %H:%M:%S' --format '%T %f' $DIR |
+while read date time file
+    echo "$date $time Fichier créé: $file"
+done
+```
 #Other alternatives
 
 There is also the `node-inotify` built as a module for notify with `Node.js`
