@@ -19,18 +19,33 @@ inotifywait  /home/lionel/Documents
 RAM when waiting. It will be called by the kernel.
 
 Just add  the logger program after an event, then the event will go directly to the syslog program,
-## Watch and log activities [Perfect Bash]
+## Watch and log and E-mail activities [Perfect Bash]
 ```
 #!/bin/sh
 MONITORDIR="/home/lionel/Documents"
-EVENTS="modify,attrib,close_write,move,create,delete"
-inotifywait -m -r -e $EVENTS --format '%w%f' "${MONITORDIR}" | while read NEWFILE
-do
-  # Send by mail
-        echo " ${NEWFILE} has been created"
-  # Log to the journal
-        echo "${NEWFILE} has been created"  | logger -p kern.crit
-done
+EVENTS_TOWATCH="move,unmount,create,modify,delete"
+MACHINE="$HOSTNAME"
+
+inotifywait -m -r -e $EVENTS_TOWATCH --format '%w%f %e' "${MONITORDIR}" |
+while read name event
+  do
+        case $event in 
+           *"CREATE"* )
+                MESSAGE=" vient d'être créee";;
+           *"MOVE"*)
+                MESSAGE=" vient d'être renommé ou deplacé";;
+           *"UNMOUNT"*) 
+                MESSAGE=" vient d'être demonté";;
+           *"MODIFY"*)
+                MESSAGE=" vient d'être modifié" ;;
+           *"DELETE"*)
+                MESSAGE=" vient d'être supprimé";;
+           *)
+                MESSAGE=" vient de subir une modification de type $event";;
+        esac
+        echo -e "Machine: ${MACHINE}, le `date`,\n $name  ${MESSAGE} " | ssmtp ngendlio@gmail.com
+        echo -e "Machine: ${MACHINE}, le `date`,\n $name ${MESSAGE} " 
+  done
 ```
 Note: You can specify the `FACILITY` and the `LEVEL` to log. CHeck out the man of `logger` program
 
