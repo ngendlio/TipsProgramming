@@ -18,41 +18,22 @@ inotifywait  /home/lionel/Documents
 `Ps`: You will notice that   inotifywait is a blocking program, and one thing you have to know is that it does not consume cpu or 
 RAM when waiting. It will be called by the kernel.
 
-## Watch folders and files continusly
-
-Create a bash file and put this code inside of it:
-
-```
-while true #run indefinitely
-do 
-inotifywait -r -e modify,attrib,close_write,move,create,delete /home/lionel/Documents
-done
-```
-## Watch and log 
-
 Just add  the logger program after an event, then the event will go directly to the syslog program,
-
+## Watch and log activities [Perfect Bash]
 ```
-while true # Waits for a event and then log, then waits again ...recursively
-do 
-inotifywait -r -e modify,attrib,close_write,move,create,delete /home/lionel/Documents |logger -p kern.crit
+#!/bin/sh
+MONITORDIR="/home/lionel/Documents"
+EVENTS="modify,attrib,close_write,move,create,delete"
+inotifywait -m -r -e $EVENTS --format '%w%f' "${MONITORDIR}" | while read NEWFILE
+do
+        # Send by mail
+        echo " ${NEWFILE} has been created"
+        # Log to the journal
+        echo "${NEWFILE} has been created"  ||logger -p kern.crit
 done
 ```
 Note: You can specify the `FACILITY` and the `LEVEL` to log. CHeck out the man of `logger` program
-## Watch and log SOME activities
-```
-#!/bin/sh
 
-# CONFIGURATION
-DIR="/tmp"
-EVENTS="create"
- 
-# MAIN
-inotifywait -m -e $EVENTS --timefmt '%Y-%m-%d %H:%M:%S' --format '%T %f' $DIR |
-while read date time file
-    echo "$date $time Fichier créé: $file"
-done
-```
 #Other alternatives
 
 There is also the `node-inotify` built as a module for notify with `Node.js`
