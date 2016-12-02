@@ -1,7 +1,7 @@
 
 # Configure secure shell server (OpenSSH)
 SSH service must have a secure configuration to allow and do what is required.
-
+Other good source :http://knowledgepia.com/en/k-blog/linux-security/how-to-harden-ssh-with-identities-and-certificates
 ##### Authentication
 The secure shell server must implement two-factor authentication that is both authentication via password and via public-key.
 
