@@ -22,17 +22,24 @@ sudo npm install -g pm2
 To start the application
 ```
 pm2 start server.js -i <nbrede Cores> --name "Mon serveur"
+# or 0 for all CPUs cores 
+pm2 start server.js -i 0 --name "Mon serveur"
+```
+To reload with zero downtime
+```
+$ pm2 restart all         
 ```
 
 To monitor the application
 ```
 pm2 monit
 ```
-
 To stop the application
 ```
 pm2 kill
 ```
+
+
 For more check the source given up and /or the pm2 --help
 #Secure Node.js SSL
 ###How to get A+ on the SSL Labs test in node.js
