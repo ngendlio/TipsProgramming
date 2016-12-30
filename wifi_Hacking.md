@@ -12,3 +12,4 @@ airmon-ng
 // answer should be like phy0 
 ```
 3) Run:
+sources
