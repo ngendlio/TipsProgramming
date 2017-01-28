@@ -15,6 +15,14 @@ sudo n lts
 
 #install nodemon and express globally
 sudo npm install nodemon express -g 
+## Install ncu to check for updates
+sudo npm install -g npm-check-updates
+
+## to check for updates of you package.json
+ncu 
+## Then to upgrade you pakcages.json( modules)
+ncu -u
+# BOUM
 ```
 #How To Set Up a Node.js Application for Production on Ubuntu 16.04
 Source :https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
