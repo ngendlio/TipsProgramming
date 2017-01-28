@@ -7,7 +7,9 @@ sudo apt-get install npm
 
 sudo npm cache clean -f
 sudo npm install -g n
-sudo n stable
+#Here you can do: n stable for the satble version, but better choose the long term supported version: n lts
+#So that you will just update modules and it will be automatically updated
+sudo n lts 
 
 #install nodemon and express globally
 sudo npm install nodemon express -g 
