@@ -7,8 +7,10 @@ sudo apt-get install npm
 
 sudo npm cache clean -f
 sudo npm install -g n
+
 #Here you can do: n stable for the satble version, but better choose the long term supported version: n lts
-#So that you will just update modules and it will be automatically updated
+ #So that you will just update modules and it will be automatically updated
+## By doing this i successfully corrected openssl vulnerable by updating it to the last version . Youhoo!
 sudo n lts 
 
 #install nodemon and express globally
