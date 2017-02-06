@@ -4,7 +4,10 @@ The inotify API provides a mechanism for monitoring filesystem
        monitor directories.  When a directory is monitored, inotify will
        return events for the directory itself, and for files inside the
        directory.
+
 `Source`: http://man7.org/linux/man-pages/man7/inotify.7.html
+
+`IBM on inotify`: http://www.ibm.com/developerworks/library/l-inotify/
 ## Installer inotify-tools
 
 ```
