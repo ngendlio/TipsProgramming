@@ -1,4 +1,4 @@
-#Some tips in Linux 
+# Some tips in Linux 
 ## Permissions
 ### Change Owner file
 ```
@@ -27,6 +27,10 @@ sudo find / -type f  -user user1  -perm /6000 -exec ls -l {} \;
 ### Add a new user
 ```
 sudo	adduser	sandra
+```
+### Create user with specific information
+```
+sudo adduser xxxxxx  -M -c ' XXXXX est un software dev du site' -g 'developers'
 ```
 Then create His password
 ```
