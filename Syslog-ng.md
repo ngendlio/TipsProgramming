@@ -1,6 +1,6 @@
-#Syslog
+# Syslog
 
-##Syslog installation
+## Syslog installation
 First, let's install some dependecies
 ```
 sudo apt-get install syslog-ng-core
@@ -14,7 +14,7 @@ For the server machine add this following in other to support Mongo DB driver
 ```
 sudo apt-get install syslog-ng-mod-mongodb
 ```
-##Recommended architecture
+## Recommended architecture
 We have two types of architectures:
 
 1. Client syslog ------> Server syslog -----> Database MongoDb (Recommended for centralized Log management)
@@ -26,7 +26,7 @@ As we rely on MongoDB, only for easier search and the actual logs are still stor
 `this is not an issue at all`.
 Complete these conf with : 
 `http://www.monitis.com/blog/how-to-filter-logs-with-syslog-ng/`
-##Syslog client configuration
+## Syslog client configuration
 ```
 @version: 3.5
 @include "scl.conf"
@@ -332,7 +332,7 @@ log {
 };
 
 ```
-##Syslog server configuration (Central loghost)
+## Syslog server configuration (Central loghost)
 ```
 @version: 3.5
 @include "scl.conf"
@@ -673,15 +673,19 @@ log {
 
 
 ```
-#Secure logging using TLS
+# Secure logging using TLS
 Check this link: https://www.balabit.com/documents/syslog-ng-ose-latest-guides/en/syslog-ng-ose-guide-admin/html/concepts-tls.html
 #Starting server 
 ```
 sudo service syslog-ng start 
 ```
 
-#Reload Server
+# Reload Server
 ```
 sudo service syslog-ng reload 
 ```
-#
+# How to log to syslog
+```
+logger jcjckjchvhvhjvkjbkjblj
+tail -l /var/logs/net-daily/year/month/day/messages 
+```
