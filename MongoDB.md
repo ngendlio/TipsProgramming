@@ -35,7 +35,12 @@ sudo service mongod restart
 ## How to connect to DB in MONGO DB
  ```
  mongo -u lio_Mongo -p admin123 --authenticationDatabase admin
-
+ ```
+ # Drop databse in mongo DB 
+ ```
+ use DB_NAME
+ // but make a test first to be sure it wont erase all DBs
+ db.dropDatabase();
  ```
 # Transactions in Mongo DB
 It is simple haha.
@@ -54,4 +59,4 @@ And when the application start check before everything else
 - If state= initial, just rollback all the doc A and doc B with the old values
 - If state = finished, then remove this doc transaction from the TRANSACTION Collection
 
-Hahha
+
