@@ -24,13 +24,13 @@ ncu
 ncu -u
 # BOUM
 ```
-#How To Set Up a Node.js Application for Production on Ubuntu 16.04
+# How To Set Up a Node.js Application for Production on Ubuntu 16.04
 Source :https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
 #PM2
 ```
 sudo npm install -g pm2
 ```
-##Manage Application with PM2
+## Manage Application with PM2
 To start the application
 ```
 pm2 start server.js -i <nbrede Cores> --name "Mon serveur"
