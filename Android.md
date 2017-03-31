@@ -1,10 +1,15 @@
 # Install Android envronnment 
+Download Java development Kit , ~  58,2 Mo
 ```
-// Download Java development Kit , ~  58,2 Mo
 sudo apt-get install openjdk-8-jdk
-// Download Java runtime Envoronnment 
+```
+// Download Java runtime Environnment 
+```
 sudo apt-get install openjdk-8-jre
-
 ```
 ## Download and install Android Studio
-ACtually just fo on the wbesite and you will see the download button.
+Actually just fo on the website and you will see the download button.
+
+Then just follow these steps to install Android studio
+
+https://developer.android.com/studio/install.html
