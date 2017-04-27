@@ -12,8 +12,8 @@ Additionally, change the port (8080) if your application is set to listen on a d
 ```
 server {
     listen 80;
-    #server_name eshuri.rw; // in case you already got an domain name
-    server_name 13.74.36.128;  // Here your public IP ADDRESS
+    #server_name example.com; // in case you already got an domain name
+    server_name 13.74.39.128;  // Here your public IP ADDRESS
     ## BLOCK SOME KNOWN USER AGENTS AND WEB SCRAWLERS
       if ($http_user_agent ~* LWP::Simple|BBBike|wget|sqlmap|havij|nmap|nessus|absinthe|nikto|w3af|pangolin|bsqlbf|prog.customcrawler|mysqloit|netsparker ) {
             return 403;
