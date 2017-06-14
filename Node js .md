@@ -1,5 +1,8 @@
 # Installation
-
+Or just do 
+```
+sudo apt-get install npm && sudo npm cache clean -f && sudo npm install -g n && sudo n lts && sudo npm install nodemon express -g && sudo npm install -g pm2
+```
 ```
 sudo apt-get install npm
 
