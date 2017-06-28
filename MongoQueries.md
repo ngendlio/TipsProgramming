@@ -6,8 +6,8 @@ Here we are creating academic_year and currentTerm
 ```
 Ex1:
 
-db.getCollection('classes').update({},{$set:{academic_year:17,currentTerm:1}},{upsert:false,multi:true})
+db.getCollection('classes').update({},{$set:{academic_year:17,currentTerm:1}},{multi:true})
 
 Ex2: 
-db.getCollection('items').update({}, {$set : {side_dishes:[]}}, {upsert:false, multi:true}) 
+db.getCollection('items').update({}, {$set : {side_dishes:[]}}, {multi:true}) 
 ```
