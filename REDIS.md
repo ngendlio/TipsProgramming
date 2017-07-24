@@ -1,4 +1,5 @@
-#Install High performance REDIS
+# Install High performance REDIS
+
 To install it 
 ```
 sudo apt-get install redis-server
@@ -70,6 +71,10 @@ client.set('framework', 'AngularJS', (err, reply)=>{
 ##### Storing objects
 ```
 client.hmset('frameworks', OBJECT);
+Then retrievev it by:
+client.hgetall('frameworks', function(err, object) {
+    console.log(object);
+});
 ```
 ##### Storing lists
 ```
