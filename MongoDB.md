@@ -2,6 +2,22 @@
 ```
 sudo apt-get install mongodb-server
 ```
+## How to Change MongoDB Default Listening Port (27017)
+
+https://medium.com/mongoaudit/how-to-change-mongodb-default-listening-port-27017-92e35f65670e
+## How to Enable Authentication on MongoDB
+
+https://medium.com/mongoaudit/how-to-enable-authentication-on-mongodb-b9e8a924efac
+## How to Upgrade MongoDB to Latest Stable Version
+
+https://medium.com/mongoaudit/how-to-upgrade-mongodb-to-latest-stable-version-9607266834cf
+## How to Enable TLS/SSL on MongoDB
+
+https://medium.com/mongoaudit/how-to-enable-tls-ssl-on-mongodb-d973a92cefa6 
+
+## How to Configure Allowed Hosts, Firewall, Whitelisting and Blacklisting in MongoDB
+
+https://medium.com/mongoaudit/how-to-configure-allowed-hosts-firewall-whitelist-and-blacklist-in-mongodb-84434ed02d3a
 # Configure MongoDB username and password
 ## Open mongo Shell and connect to admin DB
 ```
