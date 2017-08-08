@@ -56,11 +56,15 @@ sudo	groupadd	groupeX
 # Change the owner group of the target folder
 sudo	chgrp	groupeX /home/lionel/FolderX
 
+# Add a user to sudo group
+sudo usermod -a -G sudo lionel
+
 # Add user lionel to the groupeX
 sudo	usermod	-G	groupeX lionel
 
 # Make lionel the administrator of the group groupeX
 sudo	gpasswd	-A	lionel
+
 ```
 
 
