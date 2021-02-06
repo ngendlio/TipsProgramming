@@ -1,4 +1,4 @@
-# INstall ginx on Ubuntu 16.04 LTS
+# INstall ginx on Ubuntu 18.04 LTS
  First install
 ```
 sudo apt-get update
@@ -25,7 +25,7 @@ server {
       #}
 
       ## ONLY ALLOW THESE REQUEST METHODS AND DENY OTHERS LIKE DELETE, SEARCH, ETC ##
-      if ($request_method !~ ^(GET|HEAD|POST)$ ) {
+      if ($request_method !~ ^(GET|HEAD|POST|DELETE)$ ) {
             return 444;
       }
 
@@ -72,3 +72,31 @@ server {
 }
 
 ```
+
+## Sample of Nginx which serves 2 front-end and back-end.
+
+```
+server {
+    listen      80;
+    server_name application.rw;
+    
+    charset utf-8;
+    root    /home/administrator/customer-care-web/dist;
+    index   index.html index.htm;
+
+    # Always serve index.html for any request
+    location / {
+        root /home/administrator/customer-care-web/dist;
+        try_files $uri /index.html;
+    }
+
+    location /api/v1/ {
+       proxy_pass http://<IP for the back-end>/api/v1/;
+    }
+
+    error_log  /var/log/nginx/vue-app-error.log;
+
+    access_log /var/log/nginx/vue-app-access.log;
+}
+```
+
